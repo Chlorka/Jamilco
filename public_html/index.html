@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>РЖД - оформление билетов</title>
+    <link rel="stylesheet" href="/css/normalize.css"/>
+    <link rel="stylesheet" href="/css/lib/jquery-ui.css">
+    <link rel="stylesheet" href="/css/styles.css"/>
+    <script src="/js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="/" class="logo"></a>
+            <div id="searchForm">
+                <form>
+                    <div class="border-grey" id="inputFrom">
+                        <label class="from">Пункт отправления:<i></i></label>
+                        <ul class="selectForm">
+                        </ul>
+                    </div>
+                    <div class="border-grey" id="inputTo">
+                        <label class="to">Пункт прибытия:<i></i></label>
+                        <ul class="selectForm">
+                        </ul>
+                    </div>
+                    <div class="divInput inputDate">
+                        <input class="date" type="text" id="datepicker" size="30">
+                    </div>
+                    <div class="border-grey inputSubmit">
+                        <input type="submit" class="btn-pink" value="Найти">
+                    </div>
+                </form>
+            </div>
+        </header>
+        <section id="trainList">
+            <table id="trainTable" width="100%" cellspacing="0">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th class="numTrain"><a>Поезд <i></i></a></th>
+                    <th class="wayTrain">№ пути</th>
+                    <th class="timeFromTrain"><a>Отправление<i></i></a></th>
+                    <th class="timeToTrain"><a>Прибытие<i></i></a></th>
+                    <th class="freePlaceTrain">Свободные места</th>
+                    <th class="byeTicketTrain"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="itemTrain close" id="train0">
+                    <td>100Э</td>
+                    <td><a data-from="MOW" data-to="VVO" class="nameTrain">Москва-Владивосток</a>
+                        <p>поезд, РЖД/ФПК</p>
+                    </td>
+                    <td>4</td>
+                    <td><span>201709242340</span>
+                    </td>
+                    <td><span>201710010317</span>
+                    </td>
+                    <td>24 места</td>
+                    <td><a class="btn-blue">Купить билет</a></td>
+                </tr>
+                <tr class="itemTrain close" id="train1">
+                    <td>304-Ла</td>
+                    <td><a data-from="VOZ" data-to="MNT" class="nameTrain">Воронеж-Минск</a>
+                        <p>поезд, РЖД/ФПК</p>
+                    </td>
+                    <td>2</td>
+                    <td><span>201709241000</span></td>
+                    <td><span>201709232115</span></td>
+                    <td>4 места</td>
+                    <td><a class="btn-blue">Купить билет</a></td>
+                </tr>
+                <tr class="itemTrain close" id="train2">
+                    <td>154Р</td>
+                    <td><a data-from="KAG" data-to="MOW" class="nameTrain">Калуга-Москва</a>
+                        <p>поезд, РЖД/ФПК</p>
+                    </td>
+                    <td>3</td>
+                    <td><span>201709201200</span></td>
+                    <td><span>201709222200</span></td>
+                    <td>16 мест</td>
+                    <td><a class="btn-blue">Купить билет</a></td>
+                </tr>
+                <tr class="itemTrain close" id="train3">
+                    <td>120Э</td>
+                    <td><a data-from="MOW" data-to="MMK" class="nameTrain">Москва-Мурманск</a>
+                        <p>поезд, РЖД/ФПК</p>
+                    </td>
+                    <td>1</td>
+                    <td><span>201702260355</span></td>
+                    <td><span>201702271410</span></td>
+                    <td>мест нет</td>
+                    <td><a class="btn-blue desabled">Купить билет</a></td>
+                </tr>
+                <tr class="itemTrain close" id="train4">
+                    <td>120Э</td>
+                    <td><a data-from="MOW" data-to="MMK" class="nameTrain">Москва-Мурманск</a>
+                        <p>поезд, РЖД/ФПК</p>
+                    </td>
+                    <td>1</td>
+                    <td><span>201702200855</span></td>
+                    <td><span>201702210710</span></td>
+                    <td>16 мест</td>
+                    <td><a class="btn-blue">Купить билет</a></td>
+                </tr>
+                <tr id="train4-map"  class="trainMap">
+                    <td colspan="7" class="p0">
+                        <div class="containerTrain">
+                            <div class="areaTrain">
+                                <div class="mapTrain">
+                                    <div class="cupeList">
+                                        <div class="cupe"><i></i><i></i><i></i><i></i></div>
+                                        <div class="cupe"><i class="desabled"></i><i></i><i></i><i></i></div>
+                                        <div class="cupe"><i></i><i></i><i></i><i></i></div>
+                                        <div class="cupe"><i></i><i></i><i></i><i></i></div>
+                                        <div class="cupe"><i></i><i></i><i class="desabled"></i><i></i></div>
+                                        <div class="cupe"><i></i><i></i><i></i><i></i></div>
+                                        <div class="cupe"><i></i><i></i><i></i><i></i></div>
+                                        <div class="cupe"><i></i><i></i><i></i><i></i></div>
+                                        <div class="cupe"><i></i><i></i><i></i><i></i></div>
+                                        <div class="cupe"><i></i><i></i><i></i><i></i></div>
+                                    </div>
+                                </div>
+                                <div class="selectPlace">
+                                    <div>Выберите места в вагоне</div>
+                                    <div class="numPlace"></div>
+                                </div>
+                            </div>
+                            <div class="formTicket">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="itemTrain close" id="train5">
+                    <td>154Р</td>
+                    <td><a data-from="KAG" data-to="MOW" class="nameTrain">Калуга-Москва</a>
+                        <p>поезд, РЖД/ФПК</p>
+                    </td>
+                    <td>3</td>
+                    <td><span>201709232355</span></td>
+                    <td><span>201709241410</span></td>
+                    <td>16 мест</td>
+                    <td><a class="btn-blue">Купить билет</a></td>
+                </tr>
+                <tr id="train5-map" class="trainMap">
+                    <td colspan="7" class="p0">
+                        <div class="containerTrain">
+                            <div class="areaTrain">
+                                <div class="mapTrain">
+                                    <div class="cupeList">
+                                        <div class="cupe"><i class="desabled"></i><i class="desabled"></i><i class="desabled"></i><i class="desabled"></i></div>
+                                        <div class="cupe"><i class="desabled"></i><i class="desabled"></i><i class="desabled"></i><i class="desabled"></i></div>
+                                        <div class="cupe"><i class="desabled"></i><i class="desabled"></i><i class="desabled"></i><i class="desabled"></i></div>
+                                        <div class="cupe"><i class="desabled"></i><i class="desabled"></i><i class="desabled"></i><i class="desabled"></i></div>
+                                        <div class="cupe"><i class="desabled"></i><i class="desabled"></i><i class="desabled"></i><i class="desabled"></i></div>
+                                        <div class="cupe"><i class="desabled"></i><i class="desabled"></i><i class="desabled"></i><i class="desabled"></i></div>
+                                        <div class="cupe"><i class="desabled"></i><i class="desabled"></i><i class="desabled"></i><i class="desabled"></i></div>
+                                        <div class="cupe"><i class="desabled"></i><i class="desabled"></i><i class="desabled"></i><i class="desabled"></i></div>
+                                        <div class="cupe"><i class="desabled"></i><i class="desabled"></i><i class="desabled"></i><i class="desabled"></i></div>
+                                        <div class="cupe"><i></i><i></i><i></i><i></i></div>
+                                    </div>
+                                </div>
+                                <div class="selectPlace">
+                                    <div>Выберите места в вагоне</div>
+                                    <div class="numPlace"></div>
+                                </div>
+                            </div>
+                            <div class="formTicket">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="itemTrain close" id="train6">
+                    <td>120Э</td>
+                    <td><a data-from="MOW" data-to="MMK" class="nameTrain">Москва-Мурманск</a>
+                        <p>поезд, РЖД/ФПК</p>
+                    </td>
+                    <td>1</td>
+                    <td><span>201707260355</span></td>
+                    <td><span>201708271410</span></td>
+                    <td>мест нет</td>
+                    <td><a class="btn-blue desabled">Купить билет</a></td>
+                </tr>
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+        </section>
+        <footer></footer>
+    </div>
+    <script src="/js/jquery-ui.js"></script>
+    <script src="/js/datapiker_ru.js"></script>
+    <script src="/js/tablesorter.min.js"></script>
+    <script src="/js/jquery.maskedinput.min.js"></script>
+    <script src="/js/common.js"></script>
+
+</body>
+</html>
