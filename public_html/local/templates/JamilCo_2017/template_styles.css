@@ -1,0 +1,456 @@
+body {
+  color: #5c5c5c;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* ----- Form styles ----- */
+form input[type="text"],
+form input[type="email"] {
+  height: 34px;
+  border: 1px solid #ccc;
+  line-height: 30px;
+  padding: 0 12px;
+}
+form .error {
+  border: 1px solid #ff0000 !important;
+  position: relative;
+}
+form .error p {
+  display: block;
+  position: absolute;
+  height: 16px;
+  padding-left: 24px;
+  background: url('images/icons/alarm.svg') left center no-repeat;
+  z-index: 1000;
+  top: 36px;
+  max-width: 190px;
+  background-size: contain;
+  font-size: 12px;
+  line-height: 17px;
+  margin: 0;
+  color: #ff0000;
+}
+.p0 {
+  padding: 0 !important;
+}
+.tx-grey {
+  color: #cfcfcf;
+}
+.border-grey {
+  border: 1px solid #ccc;
+}
+.btn-pink {
+  color: #fff;
+  text-decoration: none;
+  user-select: none;
+  background: #ff83d2;
+  padding: 0 26px;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  line-height: 36px;
+}
+.btn-pink:hover {
+  background: #d752a7;
+  cursor: pointer;
+}
+.btn-blue {
+  display: inline-block;
+  color: #3679c7;
+  text-decoration: none;
+  user-select: none;
+  padding: 0 12px;
+  outline: none;
+  border: 1px solid #3679c7;
+  border-radius: 4px;
+  line-height: 36px;
+  font-size: 14px;
+}
+.btn-blue:hover {
+  color: #fff;
+  cursor: pointer;
+  background: #3679c7;
+}
+.btn-blue.desabled {
+  cursor: default;
+  border: 1px solid #cfcfcf;
+  background: #cfcfcf;
+  color: #000;
+}
+.container {
+  margin: 0 auto;
+  width: 1180px;
+  padding: 0 10px;
+}
+header {
+  padding-top: 30px;
+}
+header .logo {
+  display: inline-block;
+  width: 130px;
+  height: 30px;
+  background: url('images/icons/tickets-logo.svg') left top no-repeat;
+}
+header #searchForm {
+  display: inline-block;
+  vertical-align: top;
+  width: 720px;
+  margin-left: 20px;
+  font-size: 0;
+}
+header #searchForm div {
+  font-size: 16px;
+  color: #cfcfcf;
+  display: inline-block;
+  width: 219px;
+  height: 34px;
+  vertical-align: top;
+  line-height: 34px;
+}
+header #searchForm div label {
+  display: block;
+  padding: 0 20px;
+  color: #606060;
+  cursor: pointer;
+}
+header #searchForm div label span {
+  color: #cfcfcf;
+}
+header #searchForm div label i {
+  float: right;
+  font-size: 14px;
+  font-style: normal;
+  color: #cfcfcf;
+}
+header #searchForm div.inputDate {
+  width: 110px;
+  border-left: none;
+}
+header #searchForm div.inputDate input[type="text"] {
+  width: 110px;
+  padding: 0 2px 0 10px;
+  color: #cfcfcf;
+  border: none;
+}
+header #searchForm div.inputSubmit {
+  width: 90px;
+  border: none;
+  padding: 0;
+}
+header #searchForm div.inputSubmit input[type="submit"] {
+  padding: 0 20px;
+  border-radius: 0 4px 4px 0;
+}
+header #searchForm div:nth-child(n+2) {
+  border-left: none;
+}
+header #searchForm .clearFilter {
+  display: inline-block;
+  color: #ff0000;
+  padding-left: 24px;
+  font-size: 12px;
+  cursor: pointer;
+  background: url('images/icons/alarm.svg') left center no-repeat;
+}
+header #searchForm .clearFilter.hide {
+  display: none;
+}
+header .selectForm {
+  margin: 0;
+  padding: 0;
+  border: 1px solid #d8d8d8;
+  width: 219px;
+  background: #fff;
+  position: relative;
+  left: -1px;
+  display: none;
+}
+header .selectForm .item {
+  display: block;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 0 20px;
+  text-decoration: none;
+  color: #7c767a;
+}
+header .selectForm .item:hover {
+  background: #ff83d2;
+  color: #fff;
+  cursor: pointer;
+}
+header .selectForm .item:first-child {
+  border-top: none;
+}
+/* ----- Train section ----- */
+#trainList {
+  padding: 38px 0 20px;
+}
+#trainTable thead th {
+  text-transform: uppercase;
+  font-size: 11px;
+  text-align: left;
+  padding: 16px 10px 16px;
+  border-bottom: 1px solid #d8d8d8;
+}
+#trainTable thead th a {
+  color: #3679c7;
+  text-decoration: none;
+  padding-right: 14px;
+}
+#trainTable thead th a i {
+  display: inline-block;
+  width: 9px;
+  height: 8px;
+  margin-left: 6px;
+}
+#trainTable thead th.numTrain {
+  width: 290px;
+}
+#trainTable thead th.byeTicketTrain {
+  width: 106px;
+  text-align: right;
+}
+#trainTable thead th.headerSortDown i {
+  background: url('images/icons/down.svg') right center no-repeat;
+}
+#trainTable thead th.headerSortUp i {
+  background: url('images/icons/up.svg') right center no-repeat;
+}
+#trainTable tbody tr.itemTrain:hover td {
+  background: #eaf2fb;
+}
+#trainTable tbody tr.itemTrain td {
+  padding: 24px 10px 16px 10px;
+  border-bottom: 1px solid #d8d8d8;
+  font-size: 14px;
+  vertical-align: top;
+}
+#trainTable tbody tr.itemTrain td a.nameTrain {
+  display: inline-block;
+  color: #3679c7;
+  margin-bottom: 4px;
+}
+#trainTable tbody tr.itemTrain td p {
+  margin: 0;
+  font-size: 10px;
+}
+#trainTable tbody tr.itemTrain td:first-child {
+  font-size: 10px;
+  line-height: 16px;
+  color: #c6c6c6;
+  text-transform: uppercase;
+  width: 1%;
+  white-space: nowrap;
+  padding-right: 0;
+}
+#trainTable tbody tr.itemTrain td:last-child {
+  padding-top: 14px;
+  padding-right: 0;
+}
+#trainTable tbody tr.itemTrain td:nth-child(4) span,
+#trainTable tbody tr.itemTrain td:nth-child(5) span {
+  display: none;
+}
+#trainTable tbody tr.itemTrain.open td {
+  border: none;
+  background: #fff3fb;
+}
+#trainTable tbody tr.itemTrain.open td .btn-blue {
+  display: none;
+}
+#trainTable tbody tr.itemTrain.open + tr.trainMap td {
+  background: #fff3fb;
+  border-bottom: 1px solid #d8d8d8;
+}
+#trainTable tbody tr.itemTrain.open + tr.trainMap td .containerTrain {
+  height: auto;
+  overflow: hidden;
+}
+#trainTable tbody tr.itemTrain.close + tr.trainMap td .containerTrain {
+  height: 0;
+  overflow: hidden;
+}
+#trainTable tbody tr.trainMap td .containerTrain {
+  height: 0;
+  overflow: hidden;
+}
+/* ----- Map train ----- */
+.areaTrain {
+  overflow: hidden;
+  padding-left: 42px;
+  padding-bottom: 22px;
+}
+.areaTrain .mapTrain {
+  width: 618px;
+  height: 100px;
+  float: left;
+  background: url('images/ut-coupe-map-info-gs.png') left top no-repeat;
+}
+.areaTrain .mapTrain .cupeList {
+  width: 460px;
+  height: 52px;
+  margin-left: 94px;
+  margin-top: 12px;
+  font-size: 0;
+}
+.areaTrain .mapTrain .cupeList .cupe {
+  display: inline-block;
+  width: 41px;
+  height: 40px;
+  padding: 5px 2px;
+  margin-right: 1px;
+  background: #fff;
+  color: #fff;
+}
+.areaTrain .mapTrain .cupeList .cupe i {
+  display: inline-block;
+  width: 18px;
+  height: 15px;
+  margin-bottom: 6px;
+  margin-left: 2px;
+  background: #7c767a;
+  border-top: 2px solid #d6cbd2;
+  overflow: hidden;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: bold;
+  text-align: center;
+  line-height: 14px;
+  position: relative;
+}
+.areaTrain .mapTrain .cupeList .cupe i.select,
+.areaTrain .mapTrain .cupeList .cupe i:hover {
+  cursor: pointer;
+  background: #1491cf;
+  border-top: 2px solid #fdbf52;
+}
+.areaTrain .mapTrain .cupeList .cupe i.desabled {
+  background: #c2b8be;
+  border-top: 2px solid #c2b8be;
+  color: #d1c7cd;
+}
+.areaTrain .mapTrain .cupeList .cupe i.desabled:hover {
+  background: #c2b8be;
+  border-top: 2px solid #c2b8be;
+  color: #d1c7cd;
+  cursor: default;
+}
+.areaTrain .mapTrain .cupeList .cupe i:nth-child(1) {
+  top: 24px;
+  left: -1px;
+}
+.areaTrain .mapTrain .cupeList .cupe i:nth-child(2) {
+  top: -1px;
+  left: -21px;
+}
+.areaTrain .mapTrain .cupeList .cupe i:nth-child(3) {
+  top: 1px;
+  left: 20px;
+}
+.areaTrain .mapTrain .cupeList .cupe i:nth-child(4) {
+  top: -24px;
+}
+.areaTrain .selectPlace {
+  color: #5c5a5b;
+  font-size: 13px;
+  text-transform: none;
+  margin: 16px 0 0 656px;
+  width: 400px;
+}
+.areaTrain .selectPlace .numPlace {
+  font-size: 24px;
+  margin-top: 4px;
+}
+.formTicket {
+  padding-left: 50px;
+  padding-bottom: 40px;
+}
+.formTicket div.col-input {
+  display: inline-block;
+  border: 1px solid #ccc;
+  width: 218px;
+}
+.formTicket div.col-input input[type="text"],
+.formTicket div.col-input input[type="email"] {
+  display: inline-block;
+  font-size: 14px;
+  width: 218px;
+  border: none;
+}
+.formTicket .user {
+  padding-bottom: 40px;
+}
+.formTicket .user div.col-input:first-child {
+  margin-right: 34px;
+}
+.formTicket .person {
+  font-size: 0;
+  padding-bottom: 30px;
+  position: relative;
+  width: 970px;
+}
+.formTicket .person span {
+  position: absolute;
+  left: -34px;
+  top: 7px;
+  font-size: 20px;
+  color: #cfcfcf;
+}
+.formTicket .person div.col-input:nth-child(1n+2) {
+  border-left: none;
+}
+.formTicket .person div.col-input:nth-child(4n) {
+  border-left: 1px solid #ccc;
+  margin: 0 24px 0 30px;
+  width: 158px;
+}
+.formTicket .person div.col-input:nth-child(4n) input[type="text"] {
+  width: 158px;
+}
+.formTicket .person div.col-input:nth-child(5n) {
+  border-left: 1px solid #ccc;
+  margin-top: 20px;
+}
+.formTicket .person div.col-input:nth-child(7n) {
+  width: 126px;
+}
+.formTicket .person div.col-input:nth-child(7n) input[type="text"] {
+  width: 126px;
+}
+.formTicket .person .gender {
+  position: absolute;
+  top: 1px;
+  right: 0;
+  font-size: 0;
+}
+.formTicket .person .gender input[type=radio] {
+  display: none;
+}
+.formTicket .person .gender input[type=radio]:checked + label {
+  border: 1px solid #ff83d2;
+}
+.formTicket .person .gender input[type=radio]:checked + label:nth-child(2) {
+  border: 1px solid #3679c7;
+}
+.formTicket .person .gender label {
+  color: #ff83d2;
+  border: 1px solid #fff3fb;
+  border-radius: 4px;
+  display: inline-block;
+  padding: 0px 12px;
+  line-height: 35px;
+  font-size: 16px;
+}
+.formTicket .person .gender label:nth-child(2) {
+  color: #3679c7;
+}
+.formTicket .person .gender label:hover {
+  cursor: pointer;
+}
+.formTicket .person .gender.error p {
+  top: 42px;
+}
+.formTicket .btn-pink {
+  margin-top: 10px;
+  font-size: 14px;
+  padding: 0 24px;
+}
